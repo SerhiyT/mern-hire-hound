@@ -1,0 +1,1 @@
+export { SmallSidebar } from './SmallSidebar';

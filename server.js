@@ -9,6 +9,9 @@ import mongoose from 'mongoose';
 // routers 
 import jobRouter from './routers/jobRouter.js';
 
+// middleware
+import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js'
+
 /* Morgan - HTTP request logger middleware for node.js */
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -37,10 +40,7 @@ app.use('*', (req, res) => {
 /* Error Middleware 
    "error" middleware is a catch-all for handling unexpected errors that occur during request processing.
 */
-app.use((err, req, res, next) => {
-  console.log('%cqqq: err', 'color: green;', err);
-  res.status(500).json({ msg: 'Something went wrong' });
-});
+app.use(errorHandlerMiddleware);
 
 /* listeners */
 const port = process.env.PORT || 5100;

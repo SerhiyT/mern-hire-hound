@@ -1,6 +1,6 @@
 import Job from '../models/JobModel.js';
-import { StatusCodes } from 'http-status-codes';
 import { NotFoundError } from '../errors/customErrors.js';
+import { StatusCodes } from 'http-status-codes';
 
 /* 
 - Errors logged by Error Middleware 

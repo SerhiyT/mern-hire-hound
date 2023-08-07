@@ -8,6 +8,7 @@ import mongoose from 'mongoose';
 
 // routers 
 import jobRouter from './routers/jobRouter.js';
+import authRouter from './routers/authRouter.js';
 
 // middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js'
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/auth', authRouter);
 
 /* Not Found Middleware 
   "not found" middleware is specifically designed to handle requests for non-existent routes.

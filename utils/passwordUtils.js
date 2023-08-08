@@ -6,6 +6,11 @@ export async function hashPassword(password) {
   return hashedPassword;
 }
 
+export const comparePassword = async (password, hashedPassword) => {
+  const isMatch = await bcrypt.compare(password, hashedPassword);
+  return isMatch;
+}
+
 /*
 const salt = await bcrypt.genSalt(10); This line generates a random "salt" value that will be used to hash the password. 
 A salt is a random value that is added to the password before hashing, 

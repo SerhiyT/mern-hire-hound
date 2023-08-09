@@ -19,4 +19,11 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+// Delete a password from the user object
+UserSchema.methods.toJSON = function () {
+  var obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 export default mongoose.model('User', UserSchema);

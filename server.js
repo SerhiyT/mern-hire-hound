@@ -20,7 +20,6 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-
 /* Accept JSON / Setup express middleware to accept JSON */
 app.use(express.json());
 app.use(cookieParser());

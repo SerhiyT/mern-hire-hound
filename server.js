@@ -5,6 +5,7 @@ import express from 'express';
 const app = express();
 import morgan from 'morgan';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 
 // routers 
 import jobRouter from './routers/jobRouter.js';
@@ -12,20 +13,23 @@ import authRouter from './routers/authRouter.js';
 
 // middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js'
+import { authenticateUser } from './middleware/authMiddleware.js';
 
 /* Morgan - HTTP request logger middleware for node.js */
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+
 /* Accept JSON / Setup express middleware to accept JSON */
 app.use(express.json());
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/auth', authRouter);
 
 /* Not Found Middleware 

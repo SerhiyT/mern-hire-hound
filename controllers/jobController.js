@@ -7,6 +7,7 @@ import { StatusCodes } from 'http-status-codes';
 - So we no needed  try/catch block here for example
 */
 export const createJob = async (req, res) => {
+  req.body.createdBy = req.user.userId;
   const job = await Job.create(req.body);
   res.status(StatusCodes.CREATED).json({ job });
 };
@@ -19,7 +20,7 @@ export const getJob = async (req, res) => {
 };
   
 export const getAllJobs = async (req, res) => {
-  const jobs = await Job.find({});
+  const jobs = await Job.find({ createdBy: req.user.userId });
   res.status(StatusCodes.OK).json({ jobs });
 };
 

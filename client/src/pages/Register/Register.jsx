@@ -1,4 +1,5 @@
 import { Form, redirect, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import RegisterWrapper from "./Register.style"
 import { FormRow, Logo, SubmitBtn } from '../../components';
 import customFetch from '../../utils/customFetch';
@@ -8,8 +9,10 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post('/auth/register', data);
+    toast.success('Registration successful');
     return redirect('/login');
   } catch (error) {
+    toast.error(error?.response?.data?.msg);
     return error;
   }
 };

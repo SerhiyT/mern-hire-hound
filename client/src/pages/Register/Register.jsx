@@ -1,6 +1,18 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, redirect, Link } from 'react-router-dom';
 import RegisterWrapper from "./Register.style"
 import { FormRow, Logo, SubmitBtn } from '../../components';
+import customFetch from '../../utils/customFetch';
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  try {
+    await customFetch.post('/auth/register', data);
+    return redirect('/login');
+  } catch (error) {
+    return error;
+  }
+};
 
 export const Register = () => {
   return (
@@ -23,4 +35,4 @@ export const Register = () => {
       </Form>
     </RegisterWrapper>
   )
-}
+};

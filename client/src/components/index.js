@@ -7,6 +7,7 @@ import { NavBar } from './NavBar'
 import { ThemeToggle } from './ThemeToggle'
 import { LogoutContainer } from './LogoutContainer'
 import { NavLinks } from './NavLinks'
+import { FormRowSelect } from './FormRowSelect'
 
 export {
   Logo,
@@ -18,6 +19,5 @@ export {
   NavLinks,
   ThemeToggle,
   LogoutContainer,
-
-
+  FormRowSelect,
 }

@@ -1,15 +1,16 @@
 import { Form, redirect, useNavigation } from 'react-router-dom';
 import { useOutletContext } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 import { FormRow, FormRowSelect } from '../../components';
-import DashboardFormPage from '../../assets/wrappers/DashboardFormPage';
+import DashboardFormPageWrapper from '../../assets/wrappers/DashboardFormPage';
 import { JOB_STATUS, JOB_TYPE } from '../../utils/constants';
 import customFetch from '../../utils/customFetch';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  console.log('%cqqq: formData', 'color: green;', data)
+
   try {
     await customFetch.post('/jobs', data);
     toast.success('Job added successfully');
@@ -26,7 +27,7 @@ export const AddJob = () => {
   const isSubmitting = navigation.state === 'submitting';
 
   return (
-    <DashboardFormPage>
+    <DashboardFormPageWrapper>
       <Form method='post' className='form'>
         <h4 className='form-title'>add job</h4>
         <div className='form-center'>
@@ -59,6 +60,6 @@ export const AddJob = () => {
           </button>
         </div>
       </Form>
-    </DashboardFormPage>
+    </DashboardFormPageWrapper>
   );
 };

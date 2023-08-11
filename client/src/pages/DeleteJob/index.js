@@ -1,1 +1,1 @@
-export { DeleteJob } from './DeleteJob';
+export * from './DeleteJob';

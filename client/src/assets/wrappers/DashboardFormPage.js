@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 const DashboardFormPage = styled.section`
   border-radius: var(--border-radius);
-  width: 100%;
+  width: 90%;
   background: var(--background-secondary-color);
   padding: 3rem 2rem 4rem;
+  margin: 0 auto;
   .form-title {
     margin-bottom: 2rem;
   }

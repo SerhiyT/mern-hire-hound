@@ -7,6 +7,7 @@ import { checkDefaultTheme } from './utils/checkDefaultTheme';
 import { action as registerAction } from './pages/Register';
 import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
+import { action as addJobAction } from './pages/AddJob';
 
 const isDarkThemeEnabled = checkDefaultTheme();
 
@@ -36,7 +37,8 @@ const router = createBrowserRouter([
         loader: dashboardLoader,
         children: [
           { index: true,
-            element: <AddJob />
+            element: <AddJob />,
+            action: addJobAction,
           },
           {
             path: 'stats',

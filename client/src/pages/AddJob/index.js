@@ -1,1 +1,1 @@
-export { AddJob } from './AddJob';
+export * from './AddJob';

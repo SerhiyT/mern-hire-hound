@@ -12,6 +12,8 @@ import { JobsContainer } from './JobsContainer'
 import { SearchContainer } from './SearchContainer'
 import { Job } from './Job'
 import { JobInfo } from './JobInfo'
+import { StatItem } from './StatItem'
+
 
 
 export {
@@ -29,4 +31,5 @@ export {
   SearchContainer,
   Job,
   JobInfo,
+  StatItem
 }

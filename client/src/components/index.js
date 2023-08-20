@@ -13,6 +13,8 @@ import { SearchContainer } from './SearchContainer'
 import { Job } from './Job'
 import { JobInfo } from './JobInfo'
 import { StatItem } from './StatItem'
+import { StatsContainer } from './StatsContainer'
+import { ChartsContainer } from './ChartsContainer'
 
 export {
   Logo,
@@ -29,5 +31,7 @@ export {
   SearchContainer,
   Job,
   JobInfo,
-  StatItem
+  StatItem,
+  StatsContainer,
+  ChartsContainer,
 }

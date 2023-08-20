@@ -1,0 +1,1 @@
+export { AreaChartComponent } from './AreaChart';

@@ -14,8 +14,6 @@ import { Job } from './Job'
 import { JobInfo } from './JobInfo'
 import { StatItem } from './StatItem'
 
-
-
 export {
   Logo,
   SubmitBtn,

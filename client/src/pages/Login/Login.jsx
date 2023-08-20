@@ -1,4 +1,4 @@
-import { Link, Form, redirect, useActionData } from 'react-router-dom';
+import { Link, Form, redirect, useActionData, useNavigate } from 'react-router-dom';
 import LoginWrapper from './Login.style';
 import { toast } from 'react-toastify';
 import { FormRow, Logo, SubmitBtn } from '../../components';
@@ -25,6 +25,20 @@ export const action = async ({ request }) => {
 
 export const Login = () => {
   const errors = useActionData();
+  const navigate = useNavigate();
+  const loginDemoUser = async () => {
+    const data = {
+      email: 'test@test.com',
+      password: 'secret123',
+    };
+    try {
+      await customFetch.post('/auth/login', data);
+      toast.success('take a test drive');
+      navigate('/dashboard');
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+    }
+  };
 
   return (
     <LoginWrapper>
@@ -35,7 +49,7 @@ export const Login = () => {
         <FormRow type='password' name='password' />
         {errors && <p style={{ color: 'red' }}>{errors.msg}</p>}
         <SubmitBtn />
-        <button type='button' className='btn btn-block' onClick={() => {}}>
+        <button type='button' className='btn btn-block' onClick={loginDemoUser}>
           explore the app
         </button>
         <p>

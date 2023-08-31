@@ -9,7 +9,7 @@ const JobsContainerWrapper = styled.section`
   }
   & > h5 {
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
   }
   .jobs {
     display: grid;

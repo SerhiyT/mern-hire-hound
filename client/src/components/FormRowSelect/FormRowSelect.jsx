@@ -1,4 +1,4 @@
-export const FormRowSelect = ({ name, labelText, list, defaultValue = '' }) => {
+export const FormRowSelect = ({ name, labelText, list, defaultValue = '', onChange }) => {
   
   return (
     <div className='form-row'>
@@ -10,6 +10,7 @@ export const FormRowSelect = ({ name, labelText, list, defaultValue = '' }) => {
         id={name}
         className='form-select'
         defaultValue={defaultValue}
+        onChange={onChange}
       >
         {list.map((itemValue) => {
           return (

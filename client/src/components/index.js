@@ -15,6 +15,7 @@ import { JobInfo } from './JobInfo'
 import { StatItem } from './StatItem'
 import { StatsContainer } from './StatsContainer'
 import { ChartsContainer } from './ChartsContainer'
+import { Loading } from './Loading'
 
 export {
   Logo,
@@ -34,4 +35,5 @@ export {
   StatItem,
   StatsContainer,
   ChartsContainer,
+  Loading,
 }

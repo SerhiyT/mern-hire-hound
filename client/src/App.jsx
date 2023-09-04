@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         children: [
           { index: true,
             element: <AddJob />,
-            action: addJobAction,
+            action: addJobAction(queryClient),
             errorElement: <ErrorElement />
           },
           {
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
           {
             path: 'all-jobs',
             element: <AllJobs />,
-            loader: allJobsLoader,
+            loader: allJobsLoader(queryClient),
             errorElement: <ErrorElement />
           },
           {
@@ -92,13 +92,13 @@ const router = createBrowserRouter([
           {
             path: 'edit-job/:id',
             element: <EditJob />,
-            loader: editJobLoader,
-            action: editJobAction,
+            loader: editJobLoader(queryClient),
+            action: editJobAction(queryClient),
             errorElement: <ErrorElement />
           },
           {
             path: 'delete-job/:id',
-            action: deleteJobAction,
+            action: deleteJobAction(queryClient),
           },
         ],
       },

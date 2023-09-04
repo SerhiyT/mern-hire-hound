@@ -1,7 +1,7 @@
 import { Outlet, redirect, useNavigate, useNavigation } from "react-router-dom";
 import { BigSidebar, SmallSidebar, NavBar, Loading } from "../../components";
 import DashboardLayoutWrapper from "./DashboardLayout.style";
-import { createContext, useState, useContext, useEffect, useCallback } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import customFetch from "../../utils/customFetch";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";
